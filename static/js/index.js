@@ -1,5 +1,5 @@
 //https://www.eclipse.org/paho/clients/js/
-
+/*
 function LED1_On() {
 	//alert("led on");
 	console.log("led on");
@@ -16,7 +16,27 @@ function LED1_Off(){
 	message.destinationName = "juantixi99@gmail.com/tema1";
 	client.send(message);
 }
-
+*/
+// nueva funcion intercambio()
+contador=0;
+function intercambio()
+  { if (contador==0)
+      {
+      message = new Paho.MQTT.Message("ENCENDER");
+      message.destinationName = "cristian.manosalvas@unach.edu.ec/led1";
+      client.send(message);
+      contador=1;
+      }
+    else
+      {
+      message = new Paho.MQTT.Message("APAGAR");
+      message.destinationName = "cristian.manosalvas@unach.edu.ec/led1";
+      client.send(message);
+      contador=0;
+      }
+  
+  }
+// fin de nueva funcion intercambio()
 
 
 
@@ -68,5 +88,19 @@ function LED1_Off(){
   // called when a message arrives
   function onMessageArrived(message) {
     console.log("onMessageArrived:"+message.payloadString);
+// comienso
+	  document.getElementById("sensor").innerHTML=message.payloadString;
+	  if(message.payloadString===' Encendido'){
+		  document.getElementById("imagen").src="http://www.clker.com/cliparts/M/h/R/9/8/H/red-led-on-md.png";
+	  } else if(message.payloadString===' Apagado'){
+		  document.getElementById("imagen").src="http://www.clker.com/cliparts/D/M/r/s/n/P/led-red-off-md.png";
+	  }
+	  if(message.payloadString===' Encendido'){
+		  document.getElementById("btn").innerHTML="Apagar";
+	  }else if(message.payloadString===' Apagado'){
+		  document.getElementById("btn").innerHTML="Encender";
+	  }  
+//final
+	  
   }
   
