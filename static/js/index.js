@@ -23,14 +23,14 @@ function intercambio()
   { if (contador==0)
       {
       message = new Paho.MQTT.Message("ENCENDER");
-      message.destinationName = "juantixi99@gmail.com/tema1";
+      message.destinationName = "juantixi99@gmail.com/test1";
       client.send(message);
       contador=1;
       }
     else
       {
       message = new Paho.MQTT.Message("APAGAR");
-      message.destinationName = "juantixi99@gmail.com/tema1";
+      message.destinationName = "juantixi99@gmail.com/test1";
       client.send(message);
       contador=0;
       }
@@ -66,9 +66,9 @@ function intercambio()
     // Once a connection has been made, make a subscription and send a message.
     console.log("Conectado...");
 	
-    client.subscribe("juantixi99@gmail.com/tema1");
+    client.subscribe("juantixi99@gmail.com/test");
     message = new Paho.MQTT.Message("hola desde la web");
-    message.destinationName = "juantixi99@gmail.com/tema1";
+    message.destinationName = "juantixi99@gmail.com/test1";
     client.send(message);
 	
   }
