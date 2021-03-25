@@ -23,14 +23,14 @@ function intercambio()
   { if (contador==0)
       {
       message = new Paho.MQTT.Message("ENCENDER");
-      message.destinationName = "cristian.manosalvas@unach.edu.ec/led1";
+      message.destinationName = "juantixi99@gmail.com/tema1";
       client.send(message);
       contador=1;
       }
     else
       {
       message = new Paho.MQTT.Message("APAGAR");
-      message.destinationName = "cristian.manosalvas@unach.edu.ec/led1";
+      message.destinationName = "juantixi99@gmail.com/tema1";
       client.send(message);
       contador=0;
       }
