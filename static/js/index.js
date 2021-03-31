@@ -20,6 +20,7 @@ function LED1_Off(){
 // nueva funcion intercambio()
 
 
+/*
 var btn=document.getElementById('btn'), contador=0;
 function cambio()
 { if (contador==0)
@@ -38,7 +39,13 @@ function cambio()
 	}
 }
 // fin de nueva funcion intercambio()
-
+*/
+function cambio(){
+	message = new Paho.MQTT.Message(estados.txt);
+	message.destinationName = "juantixi99@gmail.com/test1";
+	client.send(message);
+}
+	
 
 
 
