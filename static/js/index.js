@@ -89,6 +89,8 @@ function cambio()
  // called when a message arrives
   function onMessageArrived(message) {
     console.log("onMessageArrived:"+message.payloadString);
+	  
+	  /*
 	  //comando para poner el sensor desde esp32
 	  document.getElementById("sensor").innerHTML=message.payloadString;
 	  if(message.payloadString==='Encendido'){
@@ -102,5 +104,6 @@ function cambio()
 	  } else if(message.payloadString==='Apagado'){
 		document.getElementById("btn").innerHTML="Encender";
 	  }
+	  */
   }
   
