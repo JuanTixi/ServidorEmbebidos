@@ -42,7 +42,7 @@ function cambio()
 */
 function cambio(){
 	message.destinationName = "juantixi99@gmail.com/test1";
-	file = codecs.open("estados.txt", "r", "utf8")
+	file = open("estados.txt", "r", "utf8")
 	message = new Paho.MQTT.Message(file);
 	client.send(message);
 	
