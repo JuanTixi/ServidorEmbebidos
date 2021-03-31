@@ -40,15 +40,14 @@ function cambio()
 }
 // fin de nueva funcion intercambio()
 */
-function historial(){
-	client.subsicribe("juantixi99@gmail.com/test")
-	message = new Paho.MQTT.Message("VER");
-	message.destinationName = "juantixi99@gmail.com/test1";
-	client.send(message);
-	
-	
-	
-}
+var btn=document.getElementById('btn');
+  function intercambio()
+  { 
+      message = new Paho.MQTT.Message("visualizar");
+      message.destinationName = "juantixi99@gmail.com/test1";
+      client.send(message);
+    
+      }
 	
 
 
@@ -100,6 +99,11 @@ function historial(){
  // called when a message arrives
   function onMessageArrived(message) {
     console.log("onMessageArrived:"+message.payloadString);
+	document.getElementById("sensor").innerHTML=message.payloadString; 
+	if(message.payloadString==='informacion'){
+		document.getElementById("sensor").innerHTML=message.payloadString;	 
+	} 
+	}
 	  
 	  /*
 	  //comando para poner el sensor desde esp32
@@ -116,5 +120,5 @@ function historial(){
 		document.getElementById("btn").innerHTML="Encender";
 	  }
 	  */
-  }
+
   
