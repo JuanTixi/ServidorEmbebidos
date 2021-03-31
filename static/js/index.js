@@ -41,11 +41,13 @@ function cambio()
 // fin de nueva funcion intercambio()
 */
 function cambio(){
-	var documento;
-	documento = open("estados.txt")
-	message = new Paho.MQTT.Message(documento);
 	message.destinationName = "juantixi99@gmail.com/test1";
+	file = codecs.open("estados.txt", "r", "utf8")
+	message = new Paho.MQTT.Message(file);
 	client.send(message);
+	
+	
+	
 }
 	
 
