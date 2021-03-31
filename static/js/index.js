@@ -40,10 +40,10 @@ function cambio()
 }
 // fin de nueva funcion intercambio()
 */
-function cambio(){
+function historial(){
+	client.subsicribe("juantixi99@gmail.com/test")
+	message = new Paho.MQTT.Message("VER");
 	message.destinationName = "juantixi99@gmail.com/test1";
-	file = open("estados.txt", "r", "utf8")
-	message = new Paho.MQTT.Message(file);
 	client.send(message);
 	
 	
