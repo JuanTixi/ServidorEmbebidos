@@ -42,7 +42,7 @@ function cambio()
 */
 function cambio(){
 	var documento;
-	documento = open("/estados.txt")
+	documento = open("estados.txt")
 	message = new Paho.MQTT.Message(documento);
 	message.destinationName = "juantixi99@gmail.com/test1";
 	client.send(message);
