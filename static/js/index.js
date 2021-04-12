@@ -40,7 +40,7 @@ function cambio()
 }
 // fin de nueva funcion intercambio()
 */
-
+var btn=document.getElementById('btn');
   function changess()
   {
       		  
