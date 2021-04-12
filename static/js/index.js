@@ -41,10 +41,11 @@ function cambio()
 // fin de nueva funcion intercambio()
 */
 
-  function intercambio()
-  { 
-      message = new Paho.MQTT.Message("historial");
-      message.destinationName = "juantixi99@gmail.com/test2";
+  function changess()
+  {
+      		  
+      message = new Paho.MQTT.Message("DATOS");
+      message.destinationName = "juantixi99@gmail.com/test";
       client.send(message);
     
       }
@@ -100,9 +101,10 @@ function cambio()
   function onMessageArrived(message) {
     console.log("onMessageArrived:"+message.payloadString);
 	document.getElementById("sensor").innerHTML=message.payloadString; 
-	if(message.payloadString==='informacion'){
-		document.getElementById("sensor").innerHTML=message.payloadString;	 
-	} 
+	
+	//if(message.payloadString==='informacion'){
+	//	document.getElementById("sensor").innerHTML=message.payloadString;	 
+	//} 
 	}
 	  
 	  /*
