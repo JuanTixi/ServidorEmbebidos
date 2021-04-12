@@ -79,8 +79,9 @@ function cambio()
     console.log("Conectado...");
 	
     client.subscribe("juantixi99@gmail.com/test");
+    client.subscribe("juantixi99@gmail.com/test1");
     message = new Paho.MQTT.Message("hola desde la web");
-    message.destinationName = "juantixi99@gmail.com/test1";
+    message.destinationName = "juantixi99@gmail.com/test2";
     client.send(message);
 	
   }
