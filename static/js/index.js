@@ -102,11 +102,12 @@ function cambio()
   function onMessageArrived(message) {
     console.log("onMessageArrived:"+message.payloadString);
 	document.getElementById("sensor").innerHTML=message.payloadString; 
-	
+	}
+
 	//if(message.payloadString==='informacion'){
 	//	document.getElementById("sensor").innerHTML=message.payloadString;	 
 	//} 
-	}
+	
 	  
 	  /*
 	  //comando para poner el sensor desde esp32
