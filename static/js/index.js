@@ -45,7 +45,7 @@ function cambio()
   {
       		  
       message = new Paho.MQTT.Message("DATOS");
-      message.destinationName = "juantixi99@gmail.com/test";
+      message.destinationName = "juantixi99@gmail.com/test2";
       client.send(message);
     
       }
