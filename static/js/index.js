@@ -44,8 +44,8 @@ function cambio()
   function changess()
   {
       		  
-      message = new Paho.MQTT.Message("DATOS");
-      message.destinationName = "juantixi99@gmail.com/test2";
+      message = new Paho.MQTT.Message("historial");
+      message.destinationName = "juantixi99@gmail.com/test1";
       client.send(message);
     
       }
@@ -78,8 +78,9 @@ function cambio()
     // Once a connection has been made, make a subscription and send a message.
     console.log("Conectado...");
 	
-    client.subscribe("juantixi99@gmail.com/test");
+    //client.subscribe("juantixi99@gmail.com/test");
     client.subscribe("juantixi99@gmail.com/test1");
+    client.subscribe("juantixi99@gmail.com/test2");
     message = new Paho.MQTT.Message("hola desde la web");
     message.destinationName = "juantixi99@gmail.com/test2";
     client.send(message);
@@ -101,9 +102,23 @@ function cambio()
  // called when a message arrives
   function onMessageArrived(message) {
     console.log("onMessageArrived:"+message.payloadString);
-	document.getElementById("sensor").innerHTML=message.payloadString; 
+	//document.getElementById("sensor").innerHTML=message.payloadString; 
+	
+//nuevo
+    if(message.destinationName=="juantixi99@gmail.com/test2"){
+    document.getElementById("cuadro").innerHTML=message.payloadString;
+    }
+	if(message.payloadString==='1'){
+		document.getElementById("sensor").innerHTML=message.payloadString;
+		
+		
+	   }
+	if(message.payloadString==='0'){
+		document.getElementById("sensor").innerHTML=message.payloadString;
 	}
-
+	  
+}	  
+//fin nuevo
 	//if(message.payloadString==='informacion'){
 	//	document.getElementById("sensor").innerHTML=message.payloadString;	 
 	//} 
